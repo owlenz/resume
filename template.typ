@@ -17,10 +17,10 @@
 
   set page(
     margin: (
-      top: 1.25cm,
+      top: 1cm,
       bottom: 0cm,
-      left: 1.5cm,
-      right: 1.5cm
+      left: 1cm,
+      right: 1cm
     ),
   )
 
@@ -30,7 +30,7 @@
   
   // Header parameters, including author and contact information.
   show heading: it => [
-    #pad(top: 0pt, bottom: -15pt, [#smallcaps(it.body)])
+    #pad(top: -5pt, bottom: -15pt, [#smallcaps(it.body)])
     #line(length: 100%, stroke: 1pt)
   ]
 
@@ -90,7 +90,6 @@ Education section formatting, allowing enumeration of degrees and GPA
   location: ""
 ) = {
   pad(
-    bottom: 10%,
     grid(
       columns: (auto, 1fr),
       align(left)[
@@ -130,38 +129,92 @@ a single list.
   }
 }
 
+
+#let projects(
+    name: "",
+    tech: "",
+    date: "",
+    url: "",
+    summary: "",
+    details: []
+) = {
+    pad(
+        bottom: 5%,
+        grid(
+            columns: (auto, 1fr),
+            align(left)[
+                #strong[#name] | #emph[#tech]
+                \
+                #link(url)
+                #{
+                    if summary != "" [
+                        \ #emph[#summary]
+                    ]
+                }
+            ],
+            align(right)[
+                #emph[#date]
+            ]
+        )
+    )
+    details
+}
+
 /*
 Experience section formatting logic.
 */
 #let exp(
-  role: "",
-  project: "",
-  date: "",
-  location: "",
-  summary: "",
-  details: []
+    role: "",
+    project: "",
+    date: "",
+    location: "",
+    summary: "",
+    details: []
 ) = {
-  pad(
-    bottom: 10%,
-    grid(
-      columns: (auto, 1fr),
-      align(left)[
-        #strong[#role] | #emph[#project]
-        #{
-          if summary != "" [
-            \ #emph[#summary]
-          ]
-        }
-      ],
-      align(right)[
-        #emph[#date]
-        #{
-          if location != "" [
-            \ #emph[#location]
-          ]
-        }
-      ]
+    pad(
+        grid(
+            columns: (9fr, 2fr),
+            align(left)[
+                #strong[#role] | #emph[#project]
+                #{
+                    if summary != "" [
+                        \ #emph[#summary]
+                    ]
+                }
+            ],
+            align(right)[
+                #emph[#date]
+            ]
+        )
     )
-  )
-  details
+    details
+}
+
+
+#let cert(
+    name: "",
+    date: "",
+    url: "",
+    source: "",
+    summary: "",
+) = {
+    pad(
+        bottom: 5%,
+        grid(
+            columns: (auto, 1fr),
+            align(left)[
+                #strong[#name] | #strong[#source]
+                \
+                #link(url)[Certificate]
+                #{
+                    if summary != "" [
+                        \ #emph[#summary]
+                    ]
+                }
+            ],
+            align(right)[
+                #emph[#date]
+            ]
+        )
+    )
 }
