@@ -173,9 +173,9 @@ Experience section formatting logic.
 ) = {
     pad(
         grid(
-            columns: (9fr, 2fr),
+            columns: (10fr, 2fr),
             align(left)[
-                #strong[#role] | #emph[#project]
+                #strong[#role]
                 #{
                     if summary != "" [
                         \ #emph[#summary]

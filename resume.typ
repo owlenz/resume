@@ -61,20 +61,20 @@
     tech: "C",
     url: "https://github.com/owlenz/cttp",
     summary: [
-        - A lightweight http server built with C and unix sockets.
-        - It handles basic http requests (GET, POST, DELETE, etc.)
-        - It uses a .ini config file for the ip address and port.
+        - Developed a lightweight HTTP server in C, utilizing Unix sockets for efficient connections and POSIX threads for enhanced load handling and concurrency.
+        - It handles basic http requests (GET, POST, PUT, etc.)
+        - It uses a .ini config file for the ip address, port and other configurations.
     ]
 )
 
 #projects(
     name: "Rordle",
     tech: "React, Tailwindcss",
-    url: "https://what-to-game.vercel.app/",
+    url: "https://rordle2.vercel.app",
     summary: [
         - A Wordle-like game for Risk of Rain 2 where you guess an item daily, losing HP with each wrong guess, and receiving hints until you either guess correctly or reach 0 HP.
         - The game is heavily inspired from isaacle (the tboi version of wordle).
-        - github: #link("https://github.com/owlenz/WhatToGame")
+        - github: #link("https://github.com/owlenz/rordle")
     ],
 )
 #projects(
@@ -91,7 +91,7 @@
 
 = Experience
 #exp(
-    role: "Freelance Web Developerssddsasa",
+    role: "Freelance Web Developer",
     date: "Feb 2024 - April 2025",
     summary: [
         - A website for a dentistry SaaS system.
@@ -109,7 +109,6 @@
         - Acquired hands-on experience with modern frameworks such as React and Express.js, showcasing the ability to design, develop, and deploy dynamic web applications.
     ],
 )
-
 #cert(
     name: "Full Stack Open's Relational Database",
     source: "University of Helsinki",
